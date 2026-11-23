@@ -53,6 +53,20 @@ FeetInches FeetInches::operator + (const FeetInches& right)
 	return temp;
 }
 
+//**********************************************
+// Overloaded multiplication operator          *
+// Returns the area in square feet.            *
+//**********************************************
+double FeetInches::operator * (const FeetInches& right) const
+{
+	int leftTotalInches = (feet * 12) + inches;
+	int rightTotalInches = (right.feet * 12) + right.inches;
+
+	double squareInches = static_cast<double>(leftTotalInches) * static_cast<double>(rightTotalInches);
+	double squareFeet = squareInches / 144.0;
+	return squareFeet;
+}
+
 
 //**********************************************
 // Overloaded binary - operator.               *

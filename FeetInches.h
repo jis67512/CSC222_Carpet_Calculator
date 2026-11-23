@@ -57,8 +57,16 @@ public:
 	// Overloaded operator functions
 	FeetInches operator + (const FeetInches&); // Overloaded +
 	FeetInches operator - (const FeetInches&); // Overloaded -
+	
+	//New multiplication operator
+	double operator * (const FeetInches& right) const;		// Overloaded *
+
 	FeetInches operator ++ ();					// Prefix ++
 	FeetInches operator ++ (int);				// Postfix ++
+
+
+
+	// Overloaded comparison operators
 	bool operator > (const FeetInches&);		// Overloaded >
 	bool operator < (const FeetInches&);		// Overloaded <
 	bool operator == (const FeetInches&);		// Overloaded ==

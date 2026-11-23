@@ -1,5 +1,6 @@
 #include "FeetInches.h"
 #include "RoomDimension.h"
+#include "RoomCarpet.h"
 
 int main()
 {
@@ -52,6 +53,25 @@ int main()
     std::cout << "Original length after modification: " << roomLength << '\n';
 
     std::cout << "Room area after modification: " << room.getArea() << " square feet\n";
+
+    std::cout << "\nTEST 5: RoomCarpet Cost Calculation\n";
+
+    RoomCarpet carpet(&room, 4.00);
+
+    std::cout << "Room area: " << room.getArea() << " square feet\n";
+
+    std::cout << "Carpet price: $4.00 per square foot\n";
+
+    std::cout << "Total carpet cost: $" << carpet.getTotalCost() << '\n';
+
+    std::cout << "\nTEST 6: Multiple Carpet Prices and Aggregation\n";
+
+    RoomCarpet carpetA(&room, 4.00);
+    RoomCarpet carpetB(&room, 6.00);
+
+    std::cout << "Carpet A total: $" << carpetA.getTotalCost() << '\n';
+
+    std::cout << "Carpet B total: $" << carpetB.getTotalCost() << '\n';
 
     return 0;
 }

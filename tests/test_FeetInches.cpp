@@ -1,6 +1,7 @@
 #include "FeetInches.h"
 #include "RoomDimension.h"
 #include "RoomCarpet.h"
+#include <stdexcept>
 
 int main()
 {
@@ -72,6 +73,20 @@ int main()
     std::cout << "Carpet A total: $" << carpetA.getTotalCost() << '\n';
 
     std::cout << "Carpet B total: $" << carpetB.getTotalCost() << '\n';
+
+    std::cout << "\nTEST 7: Invalid Input\n";
+
+    // Test an invalid carpet price
+    try
+    {
+        RoomCarpet invalidCarpet(&room, 0.0);
+
+        std::cout << "ERROR: Invalid price was accepted.\n";
+    }
+    catch (const std::invalid_argument& error)
+    {
+        std::cout << "Caught invalid price: " << error.what() << '\n';
+    }
 
     return 0;
 }

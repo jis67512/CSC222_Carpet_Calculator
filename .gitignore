@@ -1,0 +1,5 @@
+*.exe
+*.o
+*.obj
+.vscode/
+FeetInches-Version-5-Example-master/

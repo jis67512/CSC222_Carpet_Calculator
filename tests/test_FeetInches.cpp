@@ -1,4 +1,5 @@
 #include "FeetInches.h"
+#include "RoomDimension.h"
 
 int main()
 {
@@ -35,6 +36,22 @@ int main()
     double area2 = length2 * width2;
 
     std::cout << "Area: " << area2 << " square feet\n";
+
+    std::cout << "\nTEST 4: RoomDimension Area and Composition\n";
+
+    FeetInches roomLength(5, 6);
+    FeetInches roomWidth(4, 3);
+
+    RoomDimension room(roomLength, roomWidth);
+
+    std::cout << "Initial room area: " << room.getArea() << " square feet\n";
+
+    // Modify the original measurement
+    roomLength.setFeet(10);
+
+    std::cout << "Original length after modification: " << roomLength << '\n';
+
+    std::cout << "Room area after modification: " << room.getArea() << " square feet\n";
 
     return 0;
 }
